@@ -54,7 +54,7 @@ parser.add_argument('--list', dest='list',action='store_const',const=True,defaul
 parser.add_argument('--user', dest='user',help='ICS user',required=True)
 parser.add_argument('--pass', dest='passwd',help='ICS password',required=True)
 parser.add_argument('--server', dest='server',help='ICS server',required=True)
-parser.add_argument('--version', dest='version',action='store_const',const=True,default=01.00.0000,help='Version of an integration')
+parser.add_argument('--version', dest='version',action='store_const',const=True,default='01.00.0000',help='Version of an integration')
 args = parser.parse_args()
 
 logging.basicConfig(level=getattr(logging, args.loglevel),filename=args.logfile,format='[%(asctime)s] [%(levelname)s] %(message)s')
