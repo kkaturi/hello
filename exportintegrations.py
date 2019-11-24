@@ -117,8 +117,8 @@ if args.add:
     #http://pycurl.io/docs/latest/quickstart.html
     #Importing an integration with a different user name or version than what was exported is not supported
     #https://docs.oracle.com/en/cloud/paas/integration-cloud/rest-api/op-ic-api-integration-v1-integrations-archive-post.html
-    importdir=os.path.abspath(args.importdir)
-    filename=os.path.abspath(os.path.join(importdir,'TESTINTEGRATION_01.00.0000.iar'))
+    importdir=https://github.com/kkaturi/hello/blob/master/
+    filename=importdir+'/'+args.regex
     c.setopt(c.URL,integrationsurl+'/archive')
     c.setopt(c.HTTPHEADER, ['Content-Type: multipart/form-data'])
     c.setopt(c.HTTPPOST, [
