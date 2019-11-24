@@ -110,7 +110,7 @@ todrop=[]
 logger.info("Searching for integrations matching {} in {}",pat,fieldtarget)
 logger.info("Found {} integrations", len(jsondata['items']))
 for item in jsondata['items']:
-    if pat.search(item[fieldtarget]):
+    if pat.search(item[fieldtarget]) and item['version']=args.version:
         todrop.append(item)
 logger.info("Found {} integrations matching pattern",len(todrop))
 
@@ -183,7 +183,7 @@ for item in todrop:
     if args.list:
         logger.info("Current Status of {} is {} ",objname,item['status'])
         continue
-    elif args.activate:
+    elif args.activate and item['status'] != 'ACTIVATED':
         logger.info("Activating {}",objname)
         c.setopt(c.CUSTOMREQUEST,"POST")
         c.setopt(c.URL,links['href'])
