@@ -118,7 +118,7 @@ if args.add:
     #Importing an integration with a different user name or version than what was exported is not supported
     #https://docs.oracle.com/en/cloud/paas/integration-cloud/rest-api/op-ic-api-integration-v1-integrations-archive-post.html
     importdir='https://github.com/kkaturi/hello/blob/master/'
-    filename=importdir+'/'+args.regex
+    filename=importdir+'/'+args.regex[0]
     c.setopt(c.URL,integrationsurl+'/archive')
     c.setopt(c.HTTPHEADER, ['Content-Type: multipart/form-data'])
     c.setopt(c.HTTPPOST, [
