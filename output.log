@@ -1,0 +1,8 @@
+[2019-11-24 17:18:29,322] [INFO] Using regular expression re.compile('TESTINTEGRATION') on field code
+[2019-11-24 17:18:29,323] [INFO] Connecting to server https://gc3ntagocsd848-gc35001.uscom-central-1.oraclecloud.com
+[2019-11-24 17:18:29,352] [INFO] Getting integration data from https://gc3ntagocsd848-gc35001.uscom-central-1.oraclecloud.com/ic/api/integration/v1/integrations
+[2019-11-24 17:18:36,959] [INFO] Parsing integration data from https://gc3ntagocsd848-gc35001.uscom-central-1.oraclecloud.com/ic/api/integration/v1/integrations
+[2019-11-24 17:18:36,965] [INFO] Searching for integrations matching re.compile('TESTINTEGRATION') in code
+[2019-11-24 17:18:36,965] [INFO] Found 101 integrations
+[2019-11-24 17:18:36,966] [INFO] Found 1 integrations matching pattern
+[2019-11-24 17:18:36,972] [INFO] Current Status of TestIntegration TESTINTEGRATION:01.00.0000 is CONFIGURED 

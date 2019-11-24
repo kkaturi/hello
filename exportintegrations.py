@@ -54,6 +54,7 @@ parser.add_argument('--list', dest='list',action='store_const',const=True,defaul
 parser.add_argument('--user', dest='user',help='ICS user',required=True)
 parser.add_argument('--pass', dest='passwd',help='ICS password',required=True)
 parser.add_argument('--server', dest='server',help='ICS server',required=True)
+parser.add_argument('--version', dest='version',action='store_const',const=True,default=01.00.0000,help='Version of an integration')
 args = parser.parse_args()
 
 logging.basicConfig(level=getattr(logging, args.loglevel),filename=args.logfile,format='[%(asctime)s] [%(levelname)s] %(message)s')
@@ -71,7 +72,8 @@ def curlDebug(debug_type, debug_msg):
     logger.debug("{}{}",curldebugtypes[debug_type], debug_msg.decode('utf-8').strip())
 
 regparts=args.regex[0].rpartition(":")
-fieldtarget = 'name'
+#fieldtarget = 'name'
+fieldtarget = 'code'
 if len(regparts[0]) != 0:
     fieldtarget = regparts[0]
 
@@ -118,7 +120,7 @@ if args.add:
     #Importing an integration with a different user name or version than what was exported is not supported
     #https://docs.oracle.com/en/cloud/paas/integration-cloud/rest-api/op-ic-api-integration-v1-integrations-archive-post.html
     importdir='https://github.com/kkaturi/hello/blob/master'
-    filename=args.regex[0]
+    filename=args.regex[0]+'%7C'+args.version
     c.setopt(c.URL,integrationsurl+'/archive')
     c.setopt(c.HTTPHEADER, ['Content-Type: multipart/form-data'])
     c.setopt(c.HTTPPOST, [
