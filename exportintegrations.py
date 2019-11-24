@@ -110,7 +110,7 @@ todrop=[]
 logger.info("Searching for integrations matching {} in {}",pat,fieldtarget)
 logger.info("Found {} integrations", len(jsondata['items']))
 for item in jsondata['items']:
-    if pat.search(item[fieldtarget]) and item['version']=args.version:
+    if pat.search(item[fieldtarget]):
         todrop.append(item)
 logger.info("Found {} integrations matching pattern",len(todrop))
 
